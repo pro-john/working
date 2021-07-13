@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>IP-адрес на BlogGood.ru</title>
+<style>
+   .blok-center {
+    position: absolute; /* Абсолютное позиционирование */
+    width: 600px; /* Ширина блока */
+    height: 400px; /* Высота блока */
+    margin: auto; /* Отступ от блока */
+    top: 0; /* Положение блока от верхнего края */
+    bottom: 0; /* Положение блока от нижнего края */
+    left: 0; /* Положение блока от левого края */
+    right: 0; /* Положение блока от правого края */
+    background: #fc0; /* Цвет фона блока */
+    border: 0px solid #000; /* Рамка блока */
+    padding: 10px; /* Отступ внутри блока */
+    overflow: auto; /* Полоса прокрутки */
+    background: url(komp.png) no-repeat; /*путь к картинке заднего фона*/
+   }
+   .text
+   {
+   width: 300px; /* Ширина блока */
+   margin: 0 auto; /* Отступ от блока */
+   margin-top:50px; /* Отступ от блока */
+   font-size: 24px; /* размер шрифта */
+   color:#cc0000; /* цвет шрифта */
+   }
+</style>
+</head>
+<body>
+<div class="blok-center">
+<form>
+<p class="text">Ваш ip адрес:<?php echo $_SERVER['REMOTE_ADDR'] ?>
+<?php
+if( isset($_SERVER['X_FORWARDER_FOR']) ) echo "Proxy's IP-address: ".$_SERVER['X_FORWARDER_FOR']."";
+?></p>
+</form>
+</div>
+</body>
+</html>
