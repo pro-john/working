@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+  - name: Create directory
+    file:
+     path: /home/user1/.ssh
+     state: directory
+     owner: user1
+     group: user1
+     recurse: yes 
+  - name: copy key file
+    ansible.builtin.copy:
+     src: /home/user1/ansible/authorized_keys
+     dest: /home/user1/.ssh/authorized_keys
+     owner: user1
+     group: user1
+     mode: '0600'
+
